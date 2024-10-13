@@ -2,8 +2,8 @@ import streamlit as st
 import requests
 
 st.set_page_config(page_title="Astronomy Picture of the Day.",layout="wide",page_icon=":material/rocket_launch:")
-api_key = api
-r = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={api_key}")
+
+r = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={st.secrets["API_KEY"]}")
 content = r.json()
 
 col1, col2 = st.columns([0.6,0.5],vertical_alignment="center")
