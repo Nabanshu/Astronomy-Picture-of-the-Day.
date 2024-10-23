@@ -9,7 +9,7 @@ content = r.json()
 col1, col2 = st.columns([0.6,0.5],vertical_alignment="center")
 with col1:
     st.title(content["title"])
-    if content["media_type"] == "video":
+    if content["media_type"] == "video" or "other":
         st.video(content["url"])
     else:
         try:
