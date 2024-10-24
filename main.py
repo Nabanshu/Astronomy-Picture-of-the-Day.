@@ -12,20 +12,18 @@ st.title("Astronomy Picture of the Day",help="Discover the cosmos with NASA's mo
 col1, col2 = st.columns([0.6,0.5],vertical_alignment="center")
 with col1:
     st.title(content["title"])
-    if content["media_type"] == "video" or "other":
-        try:
+    if content["media_type"] == "video":
             st.video(content["url"])
-        except KeyError:
-            st.warning("Image/Video not found, wait for the next APOD",icon=":material/error:")
+    elif content["media_type"] == "image":
+        if "copyright" in content:
+            try:
+                st.image(content["hdurl"],caption=((content["date"])+ "   " +content["copyright"]))
+            except KeyError:
+                st.image(content["url"],caption=((content["date"])+ "   " +content["copyright"]))
+        else:
+            st.image(content["url"],caption=(content["date"]))
     else:
-        try:
-            st.image(content["hdurl"],caption=((content["date"])+ "" +content["copyright"]))
-        except KeyError:
-            if "copyright" in content:
-                st.image(content["url"],caption=((content["date"])+ "" +content["copyright"]))
-            else:
-                st.image(content["url"],caption=(content["date"]))
-                    
+         st.warning("Image/Video not found, wait for the next APOD",icon=":material/error:")
 with col2:
     st.info(content["explanation"])
 
