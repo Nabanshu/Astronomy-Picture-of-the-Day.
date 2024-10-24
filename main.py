@@ -8,7 +8,7 @@ r = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={st.secrets["API_
 content = r.json()
 
 
-st.title("Astronomy Picture of the Day",help="Discover the cosmos with NASA's most popular website! The APOD API provides daily stunning astronomy images, metadata, and optional concept tags for enhanced discoverability.")
+st.title("Astronomy Picture of the Day",help="The APOD API provides daily stunning astronomy images, metadata, and optional concept tags for enhanced discoverability.")
 col1, col2 = st.columns([0.6,0.5],vertical_alignment="center")
 with col1:
     st.title(content["title"])
