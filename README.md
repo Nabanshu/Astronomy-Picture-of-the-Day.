@@ -1,84 +1,82 @@
 Get you API key from here == https://api.nasa.gov
 Project Demo = https://astronomy-picture-of-the-day007.streamlit.app/
 
-Astronomy Picture of the Day (APOD) Streamlit App
 
-Overview
 
-This project is a Streamlit-based web application that fetches and displays NASA's Astronomy Picture of the Day (APOD) using NASA's APOD API. The application provides a visually appealing interface to explore daily astronomical images along with their metadata.
+# Astronomy Picture of the Day (APOD) Viewer
 
-Features
+A simple Streamlit web application that fetches and displays NASA's Astronomy Picture of the Day (APOD) using the
+NASA APOD API. The app showcases the daily astronomy image or video along with its title, explanation, and metadata.
 
-Fetches the latest Astronomy Picture of the Day from NASA's APOD API.
+## Features
 
-Displays images or videos with relevant metadata, including date and copyright information (if available).
+- Fetches the latest Astronomy Picture of the Day from NASA's APOD API.
+- Displays high-definition images or embedded videos (if available).
+- Shows the title, date, copyright information (if applicable), and a detailed explanation of the APOD.
+- Responsive layout for better viewing on different screen sizes.
 
-Provides an informative explanation of the image/video.
+## Demo
 
-User-friendly Streamlit interface with a wide layout for better visualization.
+You can try the app live https://astronomy-picture-of-the-day007.streamlit.app/.
 
-Installation
+![image](https://github.com/user-attachments/assets/48fe6d95-6002-4760-b255-73b0db0ae918)
 
-To run this project locally, follow these steps:
 
-Clone the repository:
+## Installation
 
-git clone https://github.com/your-username/apod-streamlit.git
-cd apod-streamlit
+To run this app locally, follow these steps:
 
-Install the required dependencies:
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Nabanshu/Astronomy-Picture-of-the-Day..git
+   cd Astronomy-Picture-of-the-Day
+   ```
 
-pip install -r requirements.txt
+2. **Set up a virtual environment (optional but recommended):**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows, use `venv\Scripts\activate`
+   ```
 
-Set up your API key:
+3. **Install the required dependencies:**
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-Obtain a free API key from NASA API.
+4. **Set up your NASA API key:**
+   - Get your API key from [NASA's API Portal](https://api.nasa.gov/).
+   - Create a `.streamlit/secrets.toml` file in the project directory and add your API key:
+     ```toml
+     API_KEY = "your_api_key_here"
+     ```
 
-Store it securely in a .streamlit/secrets.toml file:
+5. **Run the Streamlit app:**
+   ```bash
+   streamlit run main.py
+   ```
 
-[API_KEY]
-api_key = "your_nasa_api_key_here"
+6. **Open the app in your browser:**
+   The app will be available at `http://localhost:8501`.
 
-Run the application:
+## Usage
 
-streamlit run app.py
+- The app automatically fetches the latest APOD when opened.
+- The image or video is displayed on the left, while the title and explanation are shown on the right.
+- If the APOD is a video, it will be embedded directly in the app.
 
-Code Explanation
+## Dependencies
 
-The main application (app.py) follows these steps:
+- Python 3.7+
+- Streamlit (`pip install streamlit`)
+- Requests (`pip install requests`)
 
-Sets the Streamlit page configuration.
 
-Requests data from NASA's APOD API.
+## License
 
-Parses and displays the image or video along with its details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-Handles missing or unavailable content gracefully.
+## Acknowledgments
 
-Dependencies
+- Thanks to [NASA](https://nasa.gov/) for providing the APOD API.
+- Built with [Streamlit](https://streamlit.io/).
 
-Ensure you have the following Python packages installed:
-
-streamlit
-
-requests
-
-You can install them using:
-
-pip install streamlit requests
-
-Usage
-
-Simply run the application and enjoy daily astronomical content!
-
-License
-
-This project is open-source and available under the MIT License.
-
-Acknowledgments
-
-NASA APOD API for providing stunning space imagery.
-
-Streamlit for enabling quick web app development.
-
-Feel free to contribute and improve this project!
