@@ -4,7 +4,9 @@ import requests
 
 st.set_page_config(page_title="Astronomy Picture of the Day.",layout="wide",page_icon=":material/rocket_launch:")
 
-r = requests.get(f"https://api.nasa.gov/planetary/apod?api_key={st.secrets["API_KEY"]}&concept_tags=True&thumbs=True&hd=True")
+r = requests.get(
+    f"https://api.nasa.gov/planetary/apod?api_key={st.secrets['API_KEY']}&concept_tags=True&thumbs=True&hd=True"
+)
 content = r.json()
 
 
